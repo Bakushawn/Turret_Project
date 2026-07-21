@@ -1,0 +1,30 @@
+# ==========================================
+# CMake & Build Artifacts
+# ==========================================
+build/
+bin/
+lib/
+out/
+*.exe
+*.o
+*.obj
+*.so
+*.dll
+*.a
+
+# ==========================================
+# VS Code & IDE Settings
+# ==========================================
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/settings.json
+.idea/
+*.user
+
+# ==========================================
+# OS Generated Files
+# ==========================================
+.DS_Store
+Thumbs.db
+desktop.ini
