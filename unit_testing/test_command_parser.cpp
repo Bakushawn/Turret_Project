@@ -3,6 +3,24 @@
 
 #include "../turret_Uno/CommandParser.h"
 
+
+#ifdef _WIN32
+  #ifndef WIN32_LEAN_AND_MEAN
+    #define WIN32_LEAN_AND_MEAN
+  #endif
+  #ifndef NOMINMAX
+    #define NOMINMAX
+  #endif
+  #include <windows.h>
+#endif
+
+void configureTerminalEncoding() {
+    #ifdef _WIN32
+        // Set the Windows console output code page to UTF-8 (65001)
+        SetConsoleOutputCP(65001);
+    #endif
+}
+
 struct TestResults {
     uint32_t testsExecuted;
     uint32_t testsPassed;
@@ -23,6 +41,7 @@ static void assertCondition(bool Condition, const char* testName, TestResults& r
 int main() {
     TestResults results = {0, 0, 0};
 
+    configureTerminalEncoding();
     std::cout << "_____________________________________________\n";
     std::cout << "             ᓚ₍ ^. ̫ .^₎▄︻デ══━一            \n";
     std::cout << "   Mess with the Cat, Prepare for the Gat    \n";
@@ -57,7 +76,7 @@ int main() {
 
     // Test 3: Defensive Rejection of Corrupted Data
     TurretPacket malformedPacket = aimPacket;
-    malformedPacket.pan = -360; // introducing malformed telemetry
+    malformedPacket.pan = 180; // introducing malformed telemetry
     
     assertCondition(
         CommandParser::validatePacket(malformedPacket) == false,
