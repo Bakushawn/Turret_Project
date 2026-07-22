@@ -28,10 +28,5 @@ add_executable(
     run_tests
     unit_testing/test_command_parser.cpp
     unit_testing/test_target_resolver.cpp
+    unit_testing/test_serial_comm.cpp
 )
-
-# Target 2: Main Turret Control Executable 
-# add_executable(
-#    vision_Pi
-#    vision_Pi/main.cpp
-#)
