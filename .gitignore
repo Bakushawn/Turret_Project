@@ -25,9 +25,6 @@ out/
 # VS Code & IDE Settings
 # ==========================================
 **/.vscode/
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/settings.json
 .idea/
 *.user
 
