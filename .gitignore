@@ -13,9 +13,18 @@ out/
 *.a
 
 # ==========================================
+# PlatformIO Artifacts
+# ==========================================
+.pio/
+.pioenvs/
+.piolibdeps/
+.clang_complete
+.gcc-flags.json
+
+# ==========================================
 # VS Code & IDE Settings
 # ==========================================
-.vscode/*
+**/.vscode/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/settings.json
